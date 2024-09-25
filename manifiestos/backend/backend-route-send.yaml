@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: workshop-backend-send
+  namespace: orchestration
+  labels:
+    app: backend
+spec:
+  host: workshop-frontend.apps-crc.az.synchro.ar
+  path: /send
+  to:
+    kind: Service
+    name: backend
+    weight: 100
+  port:
+    targetPort: 5000
+  wildcardPolicy: None

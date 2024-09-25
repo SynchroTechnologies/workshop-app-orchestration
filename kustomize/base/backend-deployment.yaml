@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: PLACEHOLDER_NAMESPACE
+  labels:
+    app: backend
+spec:
+  replicas: 1  
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: PLACEHOLDER_BACKEND_IMAGE
+        resources: {
+          limits: {
+            cpu: "200m",
+            memory: "128Mi"
+          },
+          requests: {
+            cpu: "50m",
+            memory: "32Mi"
+          }
+        }
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+      - name: synregistry-acr-secret

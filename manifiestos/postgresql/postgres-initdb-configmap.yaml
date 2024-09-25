@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-initdb-configmap
+  namespace: orchestration
+data:
+  initdb.sql: |
+    CREATE ROLE synchro WITH SUPERUSER LOGIN PASSWORD 'synchro';
+    CREATE DATABASE app WITH OWNER synchro ENCODING 'UTF8';
+    GRANT ALL PRIVILEGES ON DATABASE app TO synchro;

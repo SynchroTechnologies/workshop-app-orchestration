@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - synregistry-acr-secret.yaml
+  - postgres-statefulset.yaml
+  - postgres-service.yaml
+  - backend-deployment.yaml
+  - backend-service.yaml
+  - backend-route-get.yaml
+  - backend-route-send.yaml
+
+configMapGenerator:
+  - name: postgres-initdb-configmap
+    options:
+      disableNameSuffixHash: true
+    files:
+      - initdb.sql
