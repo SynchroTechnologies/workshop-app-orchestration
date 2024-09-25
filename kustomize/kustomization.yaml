@@ -11,3 +11,5 @@ images:
     newName: ${POSTGRES_IMAGE}
   - name: PLACEHOLDER_BACKEND_IMAGE
     newName: ${BACKEND_IMAGE}
+  - name: PLACEHOLDER_FRONTEND_IMAGE
+    newName: ${BACKEND_IMAGE}
