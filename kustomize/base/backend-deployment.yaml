@@ -6,7 +6,7 @@ metadata:
   labels:
     app: backend
 spec:
-  replicas: PLACEHOLDER_REPLICAS  
+  replicas: ${REPLICAS} 
   revisionHistoryLimit: 3
   selector:
     matchLabels:
