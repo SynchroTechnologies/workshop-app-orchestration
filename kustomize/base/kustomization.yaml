@@ -9,6 +9,11 @@ resources:
   - backend-service.yaml
   - backend-route-get.yaml
   - backend-route-send.yaml
+  - frontend-deployment.yaml
+  - frontend-indexhtml-configmap.yaml
+  - frontend-nginxconf-configmap.yaml
+  - frontend-route.yaml
+  - frontend-service.yaml
 
 configMapGenerator:
   - name: postgres-initdb-configmap
