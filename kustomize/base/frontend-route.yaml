@@ -6,7 +6,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  host: workshop-frontend-PLACEHOLDER_NAMESPACE.apps-crc.az.synchro.ar
+  host: workshop-frontend-${NAMESPACE}apps-crc.az.synchro.ar
   to:
     kind: Service
     name: frontend
