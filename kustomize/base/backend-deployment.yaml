@@ -6,7 +6,7 @@ metadata:
   labels:
     app: backend
 spec:
-  replicas: ${ CANT_PODS }  
+  replicas: ${CANT_PODS}  
   revisionHistoryLimit: 3
   selector:
     matchLabels:
